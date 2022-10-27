@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme['blue-800']};
     color: ${(props) => props.theme['gray-100']};
     font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   button, input {

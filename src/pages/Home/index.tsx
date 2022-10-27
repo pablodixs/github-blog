@@ -1,8 +1,9 @@
-import { Header } from "../../components/Header";
-import { Posts } from "../../components/Posts";
-import { SearchBar } from "../../components/SearchBar";
-import { UserCard } from "../../components/UserCard";
-import { Container } from "../../styles/global";
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
+import { Posts } from '../../components/Posts'
+import { SearchBar } from '../../components/SearchBar'
+import { UserCard } from '../../components/UserCard'
+import { Container } from '../../styles/global'
 
 export function Home() {
   return (
@@ -13,6 +14,7 @@ export function Home() {
         <SearchBar />
         <Posts />
       </Container>
+      <Footer />
     </>
   )
 }

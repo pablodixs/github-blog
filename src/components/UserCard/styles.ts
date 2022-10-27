@@ -15,6 +15,7 @@ export const CardContent = styled.div`
 
   img {
     width: 9.25rem;
+    height: 9.25rem;
     object-fit: contain;
     border-radius: 8px;
   }
