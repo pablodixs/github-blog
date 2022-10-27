@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 import coverBackground from './../../assets/Cover.png'
 import logoImage from './../../assets/Logo.svg'
@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
 `
 
 export const HeaderContent = styled.section`
-  max-width: 1200px;
+  max-width: 54rem;
   width: 100%;
   height: 18.5rem;
   margin: 0 auto;

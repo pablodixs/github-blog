@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -13,6 +13,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 
+  button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+  }
+
   button {
     border: none;
     cursor: pointer;
@@ -21,5 +26,13 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+  }
+`
+export const Container = styled.div`
+  max-width: 54rem;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
   }
 `
