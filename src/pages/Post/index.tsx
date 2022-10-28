@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { Header } from '../../components/Header'
 import { HeaderPostCard } from '../../components/HeaderPostCard'
 import { PostBody } from '../../components/Posts/PostBody'
-import { IssueDataProps } from '../../contexts/ApiContext'
 import { api } from '../../libs/axios'
 import { Container } from '../../styles/global'
 

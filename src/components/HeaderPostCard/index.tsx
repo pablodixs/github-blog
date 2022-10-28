@@ -25,7 +25,6 @@ interface HeaderPostProps {
 }
 
 export function HeaderPostCard({ isLoading, post }: HeaderPostProps) {
-  console.log(post)
   const dateNow = post?.created_at.toString()
 
   return (

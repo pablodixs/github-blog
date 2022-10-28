@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import { PostBodyContainer } from './styles'
 
 interface PostBodyProps {
-  body: string
+  body: string 
 }
 
 export function PostBody({ body }: PostBodyProps) {
