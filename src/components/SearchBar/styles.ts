@@ -46,4 +46,21 @@ export const SearchBarContainer = styled.form`
       color: ${props => props.theme["blue-300"]};
     }
   }
+
+  button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    line-height: 0;
+    background-color: ${props => props.theme["blue"]};
+    transition: background-color ease 150ms;
+
+    svg {
+      color: ${props => props.theme["gray-100"]};
+    }
+
+    &:hover {
+      background-color: ${props => props.theme["blue-400"]};
+    }
+  }
 `

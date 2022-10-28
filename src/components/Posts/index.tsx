@@ -1,18 +1,18 @@
-import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { IssueDataProps } from '../../pages/Home'
 
-import { ApiContext } from '../../contexts/ApiContext'
 import { PostCardItem } from '../PostCard'
 
 import { PostsContainer } from './styles'
 
-export function Posts() {
-  const { issueData } = useContext(ApiContext)
+interface PostsProps {
+  postData: IssueDataProps[]
+}
 
+export function Posts({ postData }: PostsProps) {
   return (
     <PostsContainer>
-      {issueData.map((issue) => {
-        return <PostCardItem key={issue.id} issueData={issue} />
+      {postData.map((posts) => {
+        return <PostCardItem key={posts.id} data={posts} />
       })}
     </PostsContainer>
   )

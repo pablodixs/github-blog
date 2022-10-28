@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
-import { IssueDataProps } from '../../contexts/ApiContext'
 import { convertDateToNow } from '../../libs/dateFormatter'
+import { IssueDataProps } from '../../pages/Home'
 import { PostCard } from './styles'
 
 interface PostCardItemProps {
-  issueData: IssueDataProps
+  data: IssueDataProps
 }
 
-export function PostCardItem({ issueData }: PostCardItemProps) {
+export function PostCardItem({ data }: PostCardItemProps) {
   return (
-    <Link to={`/post/${issueData.number}`}>
+    <Link to={`/post/${data.number}`}>
       <PostCard>
         <header>
-          <h1>{issueData.title}</h1>
-          <span>{convertDateToNow(issueData.created_at)}</span>
+          <h1>{data.title}</h1>
+          <span>{convertDateToNow(data.created_at)}</span>
         </header>
-        <p>{issueData.body}</p>
+        <p>{data.body}</p>
       </PostCard>
     </Link>
   )

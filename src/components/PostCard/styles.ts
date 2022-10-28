@@ -5,7 +5,7 @@ export const PostCard = styled.div`
   padding: 2rem;
   border-radius: 10px;
   width: 100%;
-  height: 16.5rem;
+  height: 16rem;
   cursor: pointer;
   transition: box-shadow ease 150ms;
   display: flex;
@@ -24,7 +24,7 @@ export const PostCard = styled.div`
     h1 {
       flex: 1;
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: bold;
       color: ${(props) => props.theme['gray-100']};
       overflow: hidden;
       text-overflow: ellipsis;

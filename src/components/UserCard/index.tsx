@@ -1,6 +1,6 @@
 import { GithubLogo, Buildings, Users, ArrowSquareOut } from 'phosphor-react'
-import { useContext } from 'react'
-import { ApiContext } from '../../contexts/ApiContext'
+import { useEffect, useState } from 'react'
+import { api } from '../../libs/axios'
 
 import {
   CardContainer,
@@ -9,8 +9,28 @@ import {
   UserSocialContainer,
 } from './styles'
 
+interface UserDataProps {
+  name: string
+  bio: string
+  avatar_url: string
+  followers: number
+  company: string | null
+  html_url: string
+  login: string
+}
+
+
 export function UserCard() {
-  const { userData } = useContext(ApiContext)
+  const [userData, setUserData] = useState<UserDataProps>()
+
+  async function getUserData() {
+    const response = await api.get('/users/pablodixs')
+    setUserData(response.data)
+  }
+
+  useEffect(() => {
+    getUserData()
+  }, [])
 
   return (
     <CardContainer>

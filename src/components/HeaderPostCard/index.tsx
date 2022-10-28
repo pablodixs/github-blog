@@ -80,10 +80,7 @@ export function HeaderPostCard({ isLoading, post }: HeaderPostProps) {
             </div>
             <div>
               <ChatsCircle size={'1.125rem'} weight={'fill'} />
-              <span>
-                {post?.comments}
-                {post?.comments > 1 ? ' comentários' : ' comentário'}
-              </span>
+              <span>{post?.comments} comentários</span>
             </div>
           </UserSocialContainer>
         </UserInfoContainer>
