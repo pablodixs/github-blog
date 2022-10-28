@@ -6,8 +6,8 @@ import {
   ChatsCircle,
   GithubLogo,
 } from 'phosphor-react'
-import { convertDateToNow } from './../../libs/dateFormatter'
 
+import { convertDateToNow } from './../../libs/dateFormatter'
 import { PostProps } from '../../pages/Post'
 
 import {

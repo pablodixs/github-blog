@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
+
 import { convertDateToNow } from '../../libs/dateFormatter'
 import { IssueDataProps } from '../../pages/Home'
+
 import { PostCard } from './styles'
 
 interface PostCardItemProps {
   data: IssueDataProps
 }
 
-export function PostCardItem({ data}: PostCardItemProps) {
+export function PostCardItem({ data }: PostCardItemProps) {
   return (
     <Link to={`/post/${data.number}`}>
       <PostCard>

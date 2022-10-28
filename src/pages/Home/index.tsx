@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+
+import { api } from '../../libs/axios'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Posts } from '../../components/Posts'
 import { SearchBar } from '../../components/SearchBar'
 import { UserCard } from '../../components/UserCard'
-import { api } from '../../libs/axios'
+
 import { Container } from '../../styles/global'
 
 export interface IssueDataProps {

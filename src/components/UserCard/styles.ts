@@ -44,7 +44,7 @@ export const UserInfoContainer = styled.header`
     right: 0;
     font-size: 0.75rem;
     font-weight: bold;
-    color: ${props => props.theme['blue']};
+    color: ${(props) => props.theme['blue']};
 
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@ export const UserInfoContainer = styled.header`
     transition: color ease 150ms;
 
     &:hover {
-      color: ${props => props.theme['blue-100']};
+      color: ${(props) => props.theme['blue-100']};
     }
   }
 `

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { HeaderPostCard } from '../../components/HeaderPostCard'
 import { PostBody } from '../../components/Posts/PostBody'
 import { api } from '../../libs/axios'
+
 import { Container } from '../../styles/global'
 
 export interface PostProps {
@@ -41,7 +43,7 @@ export function PostPage() {
     const response = await api.get(`/repos/pablodixs/github-blog/issues/${id}`)
 
     const { title, comments, created_at, user, html_url, body } = response.data
-    
+
     const postDataResponse = {
       title,
       comments,
@@ -65,6 +67,7 @@ export function PostPage() {
         <HeaderPostCard isLoading={isLoading} post={postData} />
         <PostBody isLoading={isLoading} body={postData.body} />
       </Container>
+      <Footer />
     </>
   )
 }

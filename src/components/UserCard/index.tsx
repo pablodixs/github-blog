@@ -1,7 +1,7 @@
 import { GithubLogo, Buildings, Users, ArrowSquareOut } from 'phosphor-react'
 import { useEffect, useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
 import { api } from '../../libs/axios'
+import Skeleton from 'react-loading-skeleton'
 
 import {
   CardContainer,

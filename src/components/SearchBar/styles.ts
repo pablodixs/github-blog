@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SearchContainer = styled.section`
   margin: 4.5rem 0 3rem;
@@ -10,12 +10,12 @@ export const SearchContainer = styled.section`
 
     h2 {
       font-size: 1.125rem;
-      color: ${props => props.theme["blue-100"]};
+      color: ${(props) => props.theme['blue-100']};
       font-weight: normal;
     }
 
     span {
-      color: ${props => props.theme["blue-300"]};
+      color: ${(props) => props.theme['blue-300']};
       font-size: 0.875rem;
     }
   }
@@ -31,19 +31,19 @@ export const SearchBarContainer = styled.form`
   input {
     flex: 1;
     padding: 0.75rem 1rem;
-    background-color: ${props => props.theme["blue-900"]};
+    background-color: ${(props) => props.theme['blue-900']};
     border: none;
-    box-shadow: 0px 0px 0px 1px ${props => props.theme["blue-500"]};
+    box-shadow: 0px 0px 0px 1px ${(props) => props.theme['blue-500']};
     border-radius: 6px;
-    color: ${props => props.theme["gray-100"]};
+    color: ${(props) => props.theme['gray-100']};
 
     &:focus {
       outline: none;
-      box-shadow: 0px 0px 0px 1px ${props => props.theme.blue};
+      box-shadow: 0px 0px 0px 1px ${(props) => props.theme.blue};
     }
 
     &::placeholder {
-      color: ${props => props.theme["blue-300"]};
+      color: ${(props) => props.theme['blue-300']};
     }
   }
 
@@ -52,15 +52,15 @@ export const SearchBarContainer = styled.form`
     border-radius: 6px;
     padding: 0.75rem 1rem;
     line-height: 0;
-    background-color: ${props => props.theme["blue"]};
+    background-color: ${(props) => props.theme['blue']};
     transition: background-color ease 150ms;
 
     svg {
-      color: ${props => props.theme["gray-100"]};
+      color: ${(props) => props.theme['gray-100']};
     }
 
     &:hover {
-      background-color: ${props => props.theme["blue-400"]};
+      background-color: ${(props) => props.theme['blue-400']};
     }
   }
 `

@@ -1,6 +1,6 @@
 import Skeleton from 'react-loading-skeleton'
-import { IssueDataProps } from '../../pages/Home'
 
+import { IssueDataProps } from '../../pages/Home'
 import { PostCardItem } from '../PostCard'
 
 import { PostsContainer } from './styles'

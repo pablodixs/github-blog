@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
+import { HourglassMedium, MagnifyingGlass } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
-import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { MoonLoader } from 'react-spinners'
+import * as zod from 'zod'
+
+import { IssueDataProps } from '../../pages/Home'
 
 import { SearchBarContainer, SearchContainer } from './styles'
-import { IssueDataProps } from '../../pages/Home'
-import { HourglassMedium, MagnifyingGlass } from 'phosphor-react'
 
 const searchFormSchema = zod.object({
   query: zod.string(),
