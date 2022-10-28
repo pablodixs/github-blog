@@ -39,7 +39,7 @@ export function PostPage() {
 
   async function getPostData(id: string | undefined) {
     const response = await api.get(`/repos/pablodixs/github-blog/issues/${id}`)
-    
+
     const { title, comments, created_at, user, html_url, body } = response.data
     
     const postDataResponse = {
@@ -63,7 +63,7 @@ export function PostPage() {
       <Header />
       <Container>
         <HeaderPostCard isLoading={isLoading} post={postData} />
-        <PostBody body={postData.body} />
+        <PostBody isLoading={isLoading} body={postData.body} />
       </Container>
     </>
   )

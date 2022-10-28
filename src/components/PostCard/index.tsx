@@ -7,7 +7,7 @@ interface PostCardItemProps {
   data: IssueDataProps
 }
 
-export function PostCardItem({ data }: PostCardItemProps) {
+export function PostCardItem({ data}: PostCardItemProps) {
   return (
     <Link to={`/post/${data.number}`}>
       <PostCard>

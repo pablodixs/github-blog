@@ -17,6 +17,7 @@ export interface IssueDataProps {
 
 export function Home() {
   const [posts, setPosts] = useState<IssueDataProps[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   async function getIssueData(query?: string) {
     if (query === undefined) {
@@ -24,6 +25,7 @@ export function Home() {
         `/search/issues?q=%20repo:pablodixs/github-blog`
       )
       setPosts(data.items)
+      setIsLoading(false)
     } else {
       const { data } = await api.get(
         `/search/issues?q=${query}%20repo:pablodixs/github-blog`,
@@ -34,6 +36,7 @@ export function Home() {
         }
       )
       setPosts(data.items)
+      setIsLoading(false)
     }
   }
 
@@ -47,7 +50,7 @@ export function Home() {
       <UserCard />
       <Container>
         <SearchBar postsData={posts} getIssueData={getIssueData} />
-        <Posts postData={posts} />
+        <Posts postData={posts} isLoading={isLoading} />
       </Container>
       <Footer />
     </>

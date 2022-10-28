@@ -1,5 +1,6 @@
 import { GithubLogo, Buildings, Users, ArrowSquareOut } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton'
 import { api } from '../../libs/axios'
 
 import {
@@ -19,13 +20,14 @@ interface UserDataProps {
   login: string
 }
 
-
 export function UserCard() {
   const [userData, setUserData] = useState<UserDataProps>()
+  const [isLoading, setIsLoading] = useState(true)
 
   async function getUserData() {
-    const response = await api.get('/users/pablodixs')
-    setUserData(response.data)
+    const { data } = await api.get('/users/pablodixs')
+    setUserData(data)
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -35,14 +37,49 @@ export function UserCard() {
   return (
     <CardContainer>
       <CardContent>
-        <img src={userData?.avatar_url} />
+        {isLoading ? (
+          <Skeleton
+            baseColor="#0B1B2B"
+            highlightColor="#1C2F41"
+            height={'9.25rem'}
+            width={'9.25rem'}
+          />
+        ) : (
+          <img src={userData?.avatar_url} />
+        )}
         <UserInfoContainer>
-          <h1>{userData?.name}</h1>
-          <p>{userData?.bio}</p>
+          {isLoading ? (
+            <Skeleton
+              baseColor="#0B1B2B"
+              highlightColor="#1C2F41"
+              height={'2rem'}
+            />
+          ) : (
+            <h1>{userData?.name}</h1>
+          )}
+          {isLoading ? (
+            <Skeleton
+              baseColor="#0B1B2B"
+              highlightColor="#1C2F41"
+              height={'1rem'}
+              count={3}
+            />
+          ) : (
+            <p>{userData?.bio}</p>
+          )}
           <UserSocialContainer>
             <div>
               <GithubLogo size={18} weight={'fill'} />
-              <span>{userData?.login}</span>
+              {isLoading ? (
+                <Skeleton
+                  baseColor="#0B1B2B"
+                  highlightColor="#1C2F41"
+                  height={'0.875rem'}
+                  width={'5rem'}
+                />
+              ) : (
+                <span>{userData?.login}</span>
+              )}
             </div>
             {userData?.company !== null && (
               <div>
@@ -52,7 +89,16 @@ export function UserCard() {
             )}
             <div>
               <Users size={18} weight={'fill'} />
-              <span>{userData?.followers}</span>
+              {isLoading ? (
+                <Skeleton
+                  baseColor="#0B1B2B"
+                  highlightColor="#1C2F41"
+                  height={'0.875rem'}
+                  width={'5rem'}
+                />
+              ) : (
+                <span>{userData?.followers} seguidores</span>
+              )}
             </div>
           </UserSocialContainer>
           <a target={'_blank'} href={userData?.html_url}>
