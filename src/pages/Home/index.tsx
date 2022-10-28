@@ -20,12 +20,12 @@ export function Home() {
 
   async function getIssueData(query?: string) {
     if (query === undefined) {
-      const response = await api.get(
+      const { data } = await api.get(
         `/search/issues?q=%20repo:pablodixs/github-blog`
       )
-      setPosts(response.data.items)
+      setPosts(data.items)
     } else {
-      const response = await api.get(
+      const { data } = await api.get(
         `/search/issues?q=${query}%20repo:pablodixs/github-blog`,
         {
           params: {
@@ -33,7 +33,7 @@ export function Home() {
           },
         }
       )
-      setPosts(response.data.items)
+      setPosts(data.items)
     }
   }
 

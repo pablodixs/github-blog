@@ -19,17 +19,38 @@ export interface PostProps {
   }
 }
 
+const defaultData = {
+  title: '',
+  comments: 0,
+  created_at: '',
+  user: {
+    login: '',
+    html_url: '',
+  },
+  html_url: '',
+  body: '',
+}
+
 export function PostPage() {
   const [isLoading, setIsLoading] = useState(true)
-  const [postData, setPostData] = useState<PostProps>()
+  const [postData, setPostData] = useState<PostProps>(defaultData)
 
   const { id } = useParams()
 
   async function getPostData(id: string | undefined) {
-    const response = await api.get(
-      `/repos/pablodixs/github-blog/issues/${id}`
-    )
-    setPostData(response.data)
+    const response = await api.get(`/repos/pablodixs/github-blog/issues/${id}`)
+    
+    const { title, comments, created_at, user, html_url, body } = response.data
+    
+    const postDataResponse = {
+      title,
+      comments,
+      created_at,
+      user,
+      html_url,
+      body,
+    }
+    setPostData(postDataResponse)
     setIsLoading(false)
   }
 
@@ -42,7 +63,7 @@ export function PostPage() {
       <Header />
       <Container>
         <HeaderPostCard isLoading={isLoading} post={postData} />
-        <PostBody body={postData?.body} />
+        <PostBody body={postData.body} />
       </Container>
     </>
   )
